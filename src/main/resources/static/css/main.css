@@ -1,0 +1,52 @@
+
+body{
+    font-size: 20px;
+    background: #edf1f5;
+    margin-top:20px;
+    background-image: url('https://www.cpomagazine.com/wp-content/uploads/2023/02/what-u-s-companies-can-learn-from-the-european-payment-scene_1500.jpg');
+    color: white;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+    align-items: center;
+}
+.btn-circle.btn-lg, .btn-group-lg>.btn-circle.btn {
+    width: 50px;
+    height: 50px;
+    padding: 14px 15px;
+    font-size: 18px;
+    line-height: 23px;
+}
+.text-muted {
+    color: #c2ccd8!important;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.btn-circle {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+.user-table tbody tr .category-select {
+    max-width: 150px;
+    border-radius: 20px;
+}
+
+td, th {
+    padding: 10px;
+    margin-right: 10px;
+    border-bottom: 0.5px solid #EEE;
+}
+
+tr {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customer</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/main2.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container db-social">
+        <div class="jumbotron jumbotron-fluid"></div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-11">
+                    <div class="widget head-profile has-shadow">
+                        <div class="widget-body pb-0">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-xl-4 col-md-4 d-flex justify-content-lg-start justify-content-md-start justify-content-center">
+                                    <ul>
+                                        <li>
+                                            <div id="div-balance" class="counter">[[${customer.balance}]]</div>
+                                            <div class="heading">Balance</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-xl-4 col-md-4 d-flex justify-content-center">
+                                    <div class="image-default">
+                                        <img class="rounded-circle" src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="...">
+                                    </div>
+                                    <div class="infos">
+                                        <h2>[[${customer.firstName}]] [[${customer.lastName}]]</h2>
+                                        <div class="location">[[${customer.email}]]</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-md-4 d-flex justify-content-lg-end justify-content-md-end justify-content-center">
+                                    <div class="follow">
+                                        <a class="btn btn-shadow" id="transfer-link" href="#"><i class="la la-user-plus"></i>Transfer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form class="hide" action="/customers/transfer" method="post">
+                <label>Transfer Form</label>
+                <div class="form-row">
+                    <div class="col-7">
+                        <input name="receiverEmail" type="text" class="form-control" placeholder="Receiver Email">
+                        <input name="senderEmail" type="text" class="form-control" th:value="${customer.email}"  hidden>
+                        <span class="warn-message invalid-email">Email Not Found!</span>
+                    </div>
+                    <div class="col">
+                        <input name="amount" id="amount-inp" type="number" class="form-control" placeholder="Amount">
+                        <span class="warn-message invalid-amount">You don't have that amount of money!</span>
+                    </div>
+                    <div class="col">
+                        <input id="submit-btn" type="submit" class="form-control" value="Transfer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
