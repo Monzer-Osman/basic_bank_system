@@ -12,19 +12,19 @@ public class CustomerUtils {
     @GetMapping("/createCustomers")
     public String createDummyCustomers() {
         try {
-            createCustomer("Ahmed","Mohammad","ahmed_mohammad@yahoo.com",2000);
-            createCustomer("Osama","Alrawhany","osos_292@yahoo.com",7000);
-            createCustomer("Tommy","Egan","tommy_egan@mis-comp.com",4000);
-            createCustomer("James","Patrick","james_Patrick@gmail.com",4000);
-            createCustomer("Khalid","Mater","khalid82@gmail.com",3700);
-            createCustomer("Sam","Geliany","sam_geliany99@mis-comp.com",8200);
+            createCustomer("Ahmed", "Mohammad", "ahmed_mohammad@yahoo.com", 2000);
+            createCustomer("Osama", "Alrawhany", "osos_292@yahoo.com", 7000);
+            createCustomer("Tommy", "Egan", "tommy_egan@mis-comp.com", 4000);
+            createCustomer("James", "Patrick", "james_Patrick@gmail.com", 4000);
+            createCustomer("Khalid", "Mater", "khalid82@gmail.com", 3700);
+            createCustomer("Sam", "Geliany", "sam_geliany99@mis-comp.com", 8200);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         return "view_customers";
     }
 
-    public void createCustomer(String firstName,String lastName, String email, Integer balance) {
+    public void createCustomer(String firstName, String lastName, String email, Integer balance) {
         Customer customer = new Customer();
         customer.setFirstName(firstName);
         customer.setLastName(lastName);

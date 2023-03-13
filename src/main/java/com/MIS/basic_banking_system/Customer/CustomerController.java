@@ -1,6 +1,5 @@
 package com.MIS.basic_banking_system.Customer;
 
-import com.MIS.basic_banking_system.Transfer.TransferService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import java.util.List;
 @RequestMapping("/customers")
 public class CustomerController {
     private CustomerService customerService;
-    private TransferService transferService;
 
     @GetMapping("/all")
     public String getAllCustomers(Model model) {
@@ -35,16 +33,5 @@ public class CustomerController {
             throw new RuntimeException(e);
         }
         return "view_customer";
-    }
-
-    @GetMapping("/id/{id}")
-    public String getCustomerById(@PathVariable Integer customerId) {
-        try {
-            Customer customer = customerService.getCustomerById(customerId);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        return null;
     }
 }
