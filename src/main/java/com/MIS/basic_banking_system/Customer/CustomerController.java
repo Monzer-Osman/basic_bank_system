@@ -1,14 +1,15 @@
 package com.MIS.basic_banking_system.Customer;
 
+import com.MIS.basic_banking_system.Transfer.TransferService;
 import com.MIS.basic_banking_system.TransferDto;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import lombok.extern.slf4j.Slf4j;
-import lombok.AllArgsConstructor;
 
 import java.util.List;
 
@@ -42,22 +43,11 @@ public class CustomerController {
     public String getCustomerById(@PathVariable Integer customerId) {
         try {
             Customer customer = customerService.getCustomerById(customerId);
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
         return null;
-    }
-
-    @PostMapping("/transfer")
-    public String transfer(TransferDto transferDto) {
-        try {
-            transferService.transfer(transferDto);
-            return "redirect:/customers/all";
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
 }

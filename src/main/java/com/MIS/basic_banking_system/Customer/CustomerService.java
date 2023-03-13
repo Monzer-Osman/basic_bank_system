@@ -22,19 +22,11 @@ public class CustomerService{
 	}
 
 	public Customer getCustomerById(Integer customerId) throws Exception{
-		return customerRepository.findById(customerId).orElseThrow(() -> new EntityNotFoundException("Category not found!"));
+		return customerRepository.findById(customerId).orElseThrow(() ->
+				new EntityNotFoundException("Customer with provided id not found!"));
 	}
 
 	public void addCustomer(Customer customer){
-		customerRepository.save(customer);
-	}
-
-	public void justCreateNew(String firstName, String lastName, String email, Long balance) {
-		Customer customer = new Customer();
-		customer.setFirstName(firstName);
-		customer.setLastName(lastName);
-		customer.setEmail(email);
-		customer.setBalance(balance);
 		customerRepository.save(customer);
 	}
 
