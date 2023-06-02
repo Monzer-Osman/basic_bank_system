@@ -9,8 +9,8 @@ transferLink.onclick = function(event) {
     form.classList.remove("hide");
 }
 
-transferButton.onclick = function(event) { 
-    if (userBalance.innerText < transferAmount.value || transferAmount.value < 0) { 
+transferButton.onclick = function(event) {
+    if (userBalance.innerText < +transferAmount.value || +transferAmount.value < 0) {
         warnMessage.classList.remove("invalid-amount");
         event.preventDefault();
     }
